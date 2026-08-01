@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ "Regatta" — M.S.R.V. Saurus ============
+   Carmine #8A1B21 · Ivory #F5F4EF · Brass #A8863C
+   Hairline #E4E2D8 · Ink #16211C · Muted #6E756C
+   Green (#2F6B4F) reserved for "available / on plan".
+==================================================== */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ivory text-ink font-sans text-sm antialiased;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* layout */
+  .wrap {
+    @apply mx-auto max-w-wrap px-4 py-[18px];
+  }
+  .card {
+    @apply mb-4 rounded-card border border-hairline bg-card p-[18px];
+  }
+  .card-title {
+    @apply mb-3 font-display text-[13px] font-semibold uppercase tracking-head text-carmine;
+  }
+
+  /* display + data type helpers */
+  .disp {
+    @apply font-display uppercase tracking-label;
+  }
+  .num {
+    @apply font-mono font-semibold text-carmine;
+  }
+
+  /* form controls */
+  .lbl {
+    @apply mb-[5px] mt-3 block font-display text-[10.5px] font-semibold uppercase tracking-label text-muted;
+  }
+  .input {
+    @apply w-full rounded-[7px] border border-hairline bg-white px-[10px] py-2 text-[13.5px] text-ink;
+  }
+  .input:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brass;
+  }
+
+  /* buttons */
+  .btn {
+    @apply cursor-pointer rounded-[7px] border border-hairline bg-white px-[14px] py-2 text-[13.5px] font-medium text-ink transition-colors;
+  }
+  .btn:hover {
+    @apply border-carmine;
+  }
+  .btn:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brass;
+  }
+  .btn-primary {
+    @apply border-carmine bg-carmine text-white hover:bg-carmine-hover;
+  }
+  .btn-sm {
+    @apply px-[10px] py-1 text-[12.5px];
+  }
+
+  /* misc */
+  .roletag {
+    @apply rounded border border-brass px-2 py-[2px] font-display text-[10px] uppercase tracking-[0.18em] text-brass;
+  }
+  .banner {
+    @apply mb-[14px] rounded-lg border border-[#E3D5AE] bg-brass-soft px-3 py-[9px] text-[13px];
+  }
+}
